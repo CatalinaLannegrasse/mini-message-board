@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="wa-topbar">
+        <h1><%= title %></h1>
+        <a class="btn" href="/">All Chats</a>
+      </header>
+
+      <section class="wa-chat-panel">
+        <article class="detail-card">
+          <p class="detail-row">
+            <span class="detail-label">Author</span>
+            <%= message.user %>
+          </p>
+          <p class="detail-row">
+            <span class="detail-label">Message</span>
+            <%= message.text %>
+          </p>
+          <p class="detail-row">
+            <span class="detail-label">Sent</span>
+            <%= message.added.toLocaleString() %>
+          </p>
+          <div class="actions">
+            <a class="btn btn-secondary" href="/">Back to board</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

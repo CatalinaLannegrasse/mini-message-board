@@ -1,0 +1,212 @@
+:root {
+  --wa-header: #008069;
+  --wa-header-dark: #006653;
+  --wa-accent: #008069;
+  --wa-accent-hover: #016d59;
+  --wa-outgoing: #d9fdd3;
+  --wa-incoming: #ffffff;
+  --wa-bg: #efeae2;
+  --wa-text: #111b21;
+  --wa-muted: #667781;
+  --wa-border: #e9edef;
+  --wa-shadow: 0 1px 2px rgba(11, 20, 26, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--wa-bg);
+  background-image: radial-gradient(rgba(17, 27, 33, 0.045) 1px, transparent 0);
+  background-size: 20px 20px;
+  color: var(--wa-text);
+  line-height: 1.45;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  background-color: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(11, 20, 26, 0.1);
+}
+
+header.wa-topbar {
+  background-color: var(--wa-header);
+  color: #ffffff;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+header.wa-topbar h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.wa-chat-panel {
+  background-color: rgba(239, 234, 226, 0.88);
+  padding: 1.15rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.48rem 0.9rem;
+  border-radius: 20px;
+  background-color: var(--wa-accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn:hover {
+  background-color: var(--wa-accent-hover);
+}
+
+header.wa-topbar .btn {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+header.wa-topbar .btn:hover {
+  background-color: rgba(255, 255, 255, 0.26);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--wa-accent);
+  border: 1px solid #d1d7db;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+}
+
+.btn-secondary:hover {
+  background-color: #f0f2f5;
+}
+
+.message-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.message-bubble {
+  max-width: 82%;
+  background-color: var(--wa-incoming);
+  border-radius: 0 10px 10px 10px;
+  padding: 0.55rem 0.8rem 0.6rem;
+  box-shadow: var(--wa-shadow);
+  align-self: flex-start;
+}
+
+.message-bubble--alt {
+  background-color: var(--wa-outgoing);
+  border-radius: 10px 0 10px 10px;
+  align-self: flex-end;
+}
+
+.message-author {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--wa-header-dark);
+  margin-bottom: 0.2rem;
+}
+
+.message-text {
+  margin: 0;
+  font-size: 0.96rem;
+  word-break: break-word;
+}
+
+.message-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  margin-top: 0.35rem;
+}
+
+.message-date {
+  font-size: 0.72rem;
+  color: var(--wa-muted);
+}
+
+.message-form,
+.detail-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--wa-shadow);
+}
+
+.field {
+  margin-bottom: 0.95rem;
+}
+
+.field label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--wa-text);
+  margin-bottom: 0.35rem;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d1d7db;
+  border-radius: 8px;
+  font: inherit;
+  color: var(--wa-text);
+  background-color: #ffffff;
+}
+
+.field input:focus {
+  outline: 2px solid rgba(0, 128, 105, 0.25);
+  border-color: var(--wa-accent);
+}
+
+.detail-row {
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--wa-border);
+}
+
+.detail-row:last-of-type {
+  border-bottom: none;
+}
+
+.detail-label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--wa-muted);
+  margin-bottom: 0.2rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
