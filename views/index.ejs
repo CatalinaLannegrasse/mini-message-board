@@ -17,7 +17,7 @@
         <ul class="message-list">
           <% messages.forEach((message, index) => { %>
             <li class="message-bubble <%= index % 2 === 1 ? 'message-bubble--alt' : '' %>">
-              <span class="message-author"><%= message.user %></span>
+              <span class="message-author"><%= message.username %></span>
               <p class="message-text"><%= message.text %></p>
               <div class="message-meta">
                 <span class="message-date"><%= message.added.toLocaleString() %></span>

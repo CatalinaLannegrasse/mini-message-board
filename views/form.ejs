@@ -13,36 +13,42 @@
         <a class="btn" href="/">Back</a>
       </header>
 
-      <section class="wa-chat-panel">
-        <form class="message-form" method="POST" action="/new">
-          <div class="field">
-            <label for="messageUser">Author</label>
-            <input
-              type="text"
-              id="messageUser"
-              name="messageUser"
-              placeholder="Your name"
-              required
-            />
-          </div>
+      <% if (locals.errors && errors.length > 0) { %>
+        <ul class="error-list">
+          <% errors.forEach((error) => { %>
+            <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      <% } %>
 
-          <div class="field">
-            <label for="messageText">Message</label>
-            <input
-              type="text"
-              id="messageText"
-              name="messageText"
-              placeholder="Type a message..."
-              required
-            />
-          </div>
+      <form class="message-form" method="POST" action="/new">
+        <div class="field">
+          <label for="messageUser">Author</label>
+          <input
+            type="text"
+            id="messageUser"
+            name="messageUser"
+            value="<%= locals.formData ? formData.messageUser : '' %>"
+            required
+          />
+        </div>
 
-          <div class="actions">
-            <button class="btn" type="submit">Send</button>
-            <a class="btn btn-secondary" href="/">Cancel</a>
-          </div>
-        </form>
-      </section>
+        <div class="field">
+          <label for="messageText">Message</label>
+          <input
+            type="text"
+            id="messageText"
+            name="messageText"
+            value="<%= locals.formData ? formData.messageText : '' %>"
+            required
+          />
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit">Send</button>
+          <a class="btn btn-secondary" href="/">Cancel</a>
+        </div>
+      </form>
     </main>
   </body>
 </html>
